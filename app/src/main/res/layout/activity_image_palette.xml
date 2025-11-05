@@ -1,0 +1,54 @@
+<!-- activity_image_palette.xml -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ImagePalette">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/appbar"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
+    </androidx.appcompat.widget.Toolbar>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:maxHeight="300dp"
+        android:scaleType="fitStart"
+        android:padding="10dp"/>
+
+    <!-- Puedes agregar más elementos según tus necesidades -->
+
+    <TextView
+        android:id="@+id/lightVibrant"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Light vibrant"
+        android:gravity="center_vertical"/>
+    <TextView
+        android:id="@+id/muted"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Muted"
+        android:gravity="center_vertical"/>
+    <TextView
+        android:id="@+id/darkMuted"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Dark muted"
+        android:gravity="center_vertical"/>
+    <TextView
+        android:id="@+id/lightMuted"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:text="Light muted"
+        android:gravity="center_vertical"/>
+
+
+</LinearLayout>

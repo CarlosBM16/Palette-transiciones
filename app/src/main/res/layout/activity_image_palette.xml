@@ -21,7 +21,8 @@
         android:adjustViewBounds="true"
         android:maxHeight="300dp"
         android:scaleType="fitStart"
-        android:padding="10dp"/>
+        android:padding="10dp"
+        android:transitionName="sharedImage"/>
 
     <!-- Puedes agregar más elementos según tus necesidades -->
 

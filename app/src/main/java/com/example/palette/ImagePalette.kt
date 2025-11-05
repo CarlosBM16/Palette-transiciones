@@ -3,6 +3,10 @@ package com.example.palette
 import android.graphics.drawable.BitmapDrawable
 import android.os.Build
 import android.os.Bundle
+import android.transition.ChangeImageTransform
+import android.transition.Fade
+import android.transition.Slide
+import android.view.Window
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.RequiresApi
@@ -15,8 +19,13 @@ class ImagePalette : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.M)
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        window.requestFeature(Window.FEATURE_CONTENT_TRANSITIONS)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_image_palette)
+
+        window.enterTransition = Fade()
+        window.exitTransition = Slide()
+        window.sharedElementEnterTransition = ChangeImageTransform()
 
         val toolbar = findViewById<Toolbar>(R.id.appbar)
         setSupportActionBar(toolbar)

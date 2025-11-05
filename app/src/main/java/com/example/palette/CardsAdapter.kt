@@ -1,11 +1,13 @@
 package com.example.palette
 
+import android.app.Activity
 import android.content.Context
 import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.core.app.ActivityOptionsCompat
 import androidx.recyclerview.widget.RecyclerView
 
 class CardsAdapter(private val items: ArrayList<Tarjeta>) :
@@ -18,7 +20,7 @@ class CardsAdapter(private val items: ArrayList<Tarjeta>) :
     }
 
     class TarjViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imagen: ImageView = itemView.findViewById(R.id.image1)
+        val imagen: ImageView = itemView.findViewById(R.id.imageViewCard)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TarjViewHolder {
@@ -34,7 +36,14 @@ class CardsAdapter(private val items: ArrayList<Tarjeta>) :
         holder.itemView.setOnClickListener {
             val intent = Intent(context, ImagePalette::class.java)
             intent.putExtra("image_resource", item.imagen)
-            context.startActivity(intent)
+
+            val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                context as Activity,
+                holder.imagen,
+                "sharedImage"
+            )
+
+            context.startActivity(intent, options.toBundle())
         }
     }
 
